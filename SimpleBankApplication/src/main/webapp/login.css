@@ -1,0 +1,53 @@
+@charset "UTF-8";
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url("Products.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	height: 100vh;
+	color: black;
+	margin: 0;
+}
+
+div {
+	padding: 30px 50px;
+	border: 2px solid white;
+	border-radius: 10px;
+	background: rgba(250, 200, 200, 0.8);
+}
+
+input[type=submit], input[type=text], input[type=password] {
+	width: 100%;
+	color: black;
+	padding: 10px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 50px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
+
+a:hover {
+	text-decoration: underline;
+}

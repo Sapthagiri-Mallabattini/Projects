@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Background Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #87CEEB, #FFB6C1); /* Radial Gradient */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+}
+
+/* Form Container Styling */
+div {
+    padding: 30px 50px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent White Background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for a 3D effect */
+}
+
+/* Input Fields Styling */
+input[type="text"], 
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    cursor: pointer;
+    background-color: #FFB6C1; /* Light Pink */
+    color: black;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #87CEEB; /* Sky Blue */
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-spacing: 15px;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    color: #0000FF;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Typography Styling */
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: black;
+}

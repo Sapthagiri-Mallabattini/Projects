@@ -1,0 +1,165 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background: rgba(150, 200, 200, 0.8);
+}
+
+header {
+	background-color: 283618;
+	color: white;
+	padding: 10px 0;
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+}
+
+header .logo h1 {
+	margin: 0;
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+nav ul li {
+	margin: 0 15px;
+}
+
+nav ul li a, nav ul li button {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+nav ul li a.active {
+	border-bottom: 2px solid yellow;
+}
+
+.hero {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-align: center;
+	margin-top: 70px;
+}
+
+.hero h2 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.hero button {
+	padding: 10px 20px;
+	font-size: 18px;
+	background-color: #ffcc00;
+	border: none;
+	cursor: pointer;
+}
+
+footer {
+	background-color: 283618;
+	color: white;
+	text-align: center;
+	padding: 10px 0;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content {
+	background-color: white;
+	padding: 20px;
+	border-radius: 10px;
+	width: 300px;
+	text-align: center;
+}
+
+.modal-content input {
+	width: 100%;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.close {
+	color: red;
+	float: right;
+	font-size: 24px;
+	cursor: pointer;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	position: relative;
+	padding: 10px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
+	padding: 10px;
+	display: block;
+}
+
+nav ul li ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul li ul li {
+	width: 150px;
+}
+
+nav ul li:hover ul {
+	display: block;
+}
+
+nav ul li ul li a {
+	padding: 10px;
+	display: block;
+	color: #000;
+	background-color: #fff;
+}
+
+nav ul li ul li a:hover {
+	background-color: #f2f2f2;
+}
