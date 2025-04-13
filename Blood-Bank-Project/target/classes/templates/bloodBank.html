@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Bank</title>
+<link rel="stylesheet" th:href="@{/css/bloodBank.css}">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/blood/}">HOME</a></li>
+				<li><a th:href="@{/blood/bloodBank}">BLOOD BANK</a></li>
+				<li><a th:href="@{/blood/allBloodGroupList}">ALL BLOOD
+						GROUP LIST</a></li>
+				<li class="dropdown"><a th:href="@{/#}">MORE</a>
+					<ul class="dropdown-menu">
+						<li><a th:href="@{#}">About us</a></li>
+						<li><a th:href="@{/blood/requestForBlood}">Request Blood</a></li>
+						<li><a th:href="@{#}">Donation</a></li>
+					</ul></li>
+				<li class="donate-btn"><a href="#">DONATE
+						US</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="hero">
+		<h1>
+			<span>Find Blood Bank of India</span>
+		</h1>
+		<form th:action="@{/blood/search}" method="GET">
+			<div class="search-container">
+				<select name="state" id="state">
+					<option value="">Select State</option>
+				</select> 
+				<select name="district" id="district">
+					<option value="">Select District</option>
+				</select> 
+				<select name="tehsil" id="tehsil">
+					<option value="">All Tehsil</option>
+				</select>
+
+				<button type="submit" id="search">SEARCH</button>
+			</div>
+		</form>
+	</section>
+	<script th:src="@{/js/home.js}"></script>
+</body>
+</html>

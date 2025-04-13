@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Donor Details</title>
+    <link rel="stylesheet" th:href="@{/css/visit.css}">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Donor Information</h2>
+        
+        <div class="info-box">
+            <p><strong>Name:</strong> <span th:text="${donor.name}"></span></p>
+            <p><strong>Mobile No:</strong> <span th:text="${donor.mobileno}"></span></p>
+            <p><strong>Blood Group:</strong> <span th:text="${donor.bloodgroup}"></span></p>
+            <p><strong>Gender:</strong> <span th:text="${donor.gender}"></span></p>
+            <p><strong>Tehsil:</strong> <span th:text="${donor.tehsil}"></span></p>
+            <p><strong>District:</strong> <span th:text="${donor.district}"></span></p>
+            <p><strong>State:</strong> <span th:text="${donor.state}"></span></p>
+            <p><strong>Pincode:</strong> <span th:text="${donor.pincode}"></span></p>
+            <p><strong>Joining Date:</strong> <span th:text="${donor.joiningdate}"></span></p>
+            <p><strong>Mail Id:</strong> <span th:text="${donor.email}"></span></p>
+        </div>
+
+    	<a th:href="@{/blood/}"><button class="back-btn">Home</button></a>
+    </div>
+
+</body>
+</html>

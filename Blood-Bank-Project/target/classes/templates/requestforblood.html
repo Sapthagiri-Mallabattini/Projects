@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request for Blood</title>
+    <link rel="stylesheet" th:href="@{/css/requestforblood.css}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+				<li><a th:href="@{/blood/}">HOME</a></li>
+				<li><a th:href="@{/blood/bloodBank}">BLOOD BANK</a></li>
+				<li><a th:href="@{/blood/allBloodGroupList}">ALL BLOOD GROUP LIST</a></li>
+				<li class="dropdown">
+                    <a th:href="@{/#}">MORE</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/#}">About us</a></li>
+                        <li><a th:href="@{/blood/requestForBlood}">Request Blood</a></li>
+                        <li><a th:href="@{/#}">Donation</a></li>
+                    </ul>
+                </li>
+				<li class="donate-btn"><a href="#">DONATE US</a></li>
+			</ul>
+        </nav>
+    </header>
+    <div class="container" >
+        <h2>Request for Blood</h2>
+        <form th:action="@{/blood/sendMail}" method="post">
+            
+            <fieldset>
+                <legend>Patient Details</legend>
+                <label for="patientname">Patient Name *</label>
+                <input type="text" id="patientname" name="patientname" required>
+                
+                <label for="doctorname">Doctor Name *</label>
+                <input type="text" id="doctorname" name="doctorname" required>
+                
+                <label for="bloodgroup">Blood Group *</label>
+                <select id="bloodgroup" name="bloodgroup" required>
+                    <option value="">--Select Blood Group--</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+                
+                <label for="state">State</label>
+                <select id="state" name="state">
+                    <option value="">Select State</option>
+                </select>
+                
+                <label for="district">District</label>
+                <select id="district" name="district">
+                    <option value="">Select District</option>
+                </select>
+                
+                <label for="tehsil">Tehsil</label>
+                <select id="tehsil" name="tehsil">
+                    <option value="">Select Tehsil</option>
+                </select>
+                
+                <label for="hospitaladdress">Hospital Name & Address *</label>
+                <textarea id="hospitaladdress" name="hospitaladdress" required></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contact Details</legend>
+                <label for="contactname">Contact Name *</label>
+                <input type="text" id="contactname" name="contactname" required>
+                
+                <label for="mobile">Mobile No. *</label>
+                <input type="text" id="mobileno" name="mobileno" pattern="[0-9]{10}" required>
+                
+                <label for="dateneeded">Date When Need *</label>
+                <input type="date" id="dateneeded" name="dateneeded" required>
+                
+                <label for="priority">Priority *</label>
+                <select id="priority" name="priority" required>
+                    <option value="">-- Priority Type --</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Other Message</label>
+                <textarea id="message" name="message"></textarea>
+            </fieldset>
+            <button type="submit" class="submit-btn">SEND REQUEST</button>
+        </form>
+    </div>
+    <script th:src="@{/js/home.js}"></script>
+</body>
+</html>

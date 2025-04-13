@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank</title>
+    <link rel="stylesheet" th:href="@{/css/list.css}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/blood/}">HOME</a></li>
+                <li><a th:href="@{/blood/bloodBank}">BLOOD BANK</a></li>
+                <li><a th:href="@{/blood/allBloodGroupList}">ALL BLOOD GROUP LIST</a></li>
+                <li class="dropdown">
+                    <a th:href="@{/#}">MORE</a>
+                    <ul class="dropdown-menu">
+                        <li><a th:href="@{/#}">About us</a></li>
+                        <li><a th:href="@{/blood/requestForBlood}">Request Blood</a></li>
+                        <li><a th:href="@{/#}">Donation</a></li>
+                    </ul>
+                </li>
+                <li class="donate-btn"><a href="#">DONATE US</a></li>
+            </ul>
+        </nav>
+    </header>
+	<form th:action="@{/blood/findBloodGroups}" method="get">
+    <section class="blood-donor-stats">
+        <h2>Total Blood Donor Register With Blood Bank Today</h2><br>
+        <div class="blood-groups">
+            <button class="blood-group" name="bloodgroup" value="A-"><span>A-</span></button>
+            <button class="blood-group" name="bloodgroup" value="A+"><span>A+</span></button>
+            <button class="blood-group" name="bloodgroup" value="AB-"><span>AB-</span></button>
+            <button class="blood-group" name="bloodgroup" value="AB+"><span>AB+</span></button><br>
+            <button class="blood-group" name="bloodgroup" value="B-"><span>B-</span></button>
+            <button class="blood-group" name="bloodgroup" value="B+"><span>B+</span></button>
+            <button class="blood-group" name="bloodgroup" value="O-"><span>O-</span></button>
+            <button class="blood-group" name="bloodgroup" value="O+"><span>O+</span></button>
+        </div>
+        <br>
+        <a th:href="@{/blood/showAllBloodGroupDetails}" class="all-blood-list">ALL BLOOD GROUP LIST</a>
+    </section>
+</form>
+    <script th:src="@{/js/home.js}"></script>
+</body>
+</html>

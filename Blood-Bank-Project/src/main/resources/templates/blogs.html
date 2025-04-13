@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Blogs</title>
+    <link rel="stylesheet" th:href="@{/css/blogs.css}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/blood/}">HOME</a></li>
+                <li><a th:href="@{/blood/bloodBank}">BLOOD BANK</a></li>
+                <li><a th:href="@{/blood/allBloodGroupList}">ALL BLOOD GROUP LIST</a></li>
+                <li><a th:href="@{/blood/blogs}">BLOGS</a></li>
+                <li><a th:href="@{/blood/events}">EVENTS</a></li>
+                <li><a th:href="@{/blood/news}">NEWS</a></li>
+                <li><a th:href="@{/blood/videos}">VIDEOS</a></li>
+                <li><a href="#">MORE</a></li>
+                <li class="donate-btn"><a href="#">DONATE US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Blood Bank Blogs</h1>
+        <div class="blog-list">
+            <div class="blog-card" th:each="blog : ${blogs}">
+                <h2 th:text="${blog.title}"></h2>
+                <p th:text="${blog.excerpt}"></p>
+                <button class="read-more" th:data-id="${blog.id}">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/blogs.js}"></script>
+</body>
+</html>

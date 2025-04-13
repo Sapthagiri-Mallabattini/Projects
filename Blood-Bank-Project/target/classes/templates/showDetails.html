@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Blood Donors In India</title>
+    <link rel="stylesheet" th:href="@{/css/showDetails.css}">
+</head>
+<body>
+<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/blood/}">HOME</a></li>
+				<li><a th:href="@{/blood/bloodBank}">BLOOD BANK</a></li>
+				<li><a th:href="@{/blood/allBloodGroupList}">ALL BLOOD
+						GROUP LIST</a></li>
+				<li class="dropdown"><a th:href="@{/#}">MORE</a>
+					<ul class="dropdown-menu">
+						<li><a th:href="@{/#}">About us</a></li>
+						<li><a th:href="@{/blood/requestForBlood}">Request Blood</a></li>
+						<li><a th:href="@{/#}">Donation</a></li>
+					</ul></li>
+				<li class="donate-btn"><a href="#">DONATE
+						US</a></li>
+			</ul>
+		</nav>
+	</header>
+
+    <form th:action="@{/blood/searchType}" method="get">
+        <input type="text" name="searchValue" placeholder="Enter Blood Group, State, or District" th:value="${searchValue}">
+        
+        <select id="searchType" name="searchType" required>
+            <option value="">--Select Search Type--</option>
+            <option value="Bloodgroup">Blood Group</option>
+            <option value="State">State</option>
+            <option value="District">District</option>
+        </select>
+
+        <button type="submit">Search</button>
+    </form>
+
+    <th:block th:if="${bloodGroupInfo != null and not #lists.isEmpty(bloodGroupInfo)}">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>MOBILE NO</th>
+                    <th>PINCODE</th>
+                    <th>STATE</th>
+                    <th>DISTRICT</th>
+                    <th>TEHSIL</th>
+                    <th>BLOOD GROUP</th>
+                    <th>GENDER</th>
+                    <th>JOINING DATE</th>
+                    <th>EMAIL</th>
+                    <th>VISIT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="blood : ${bloodGroupInfo}">
+                    <td th:text="${blood.id}"></td>
+                    <td th:text="${blood.name}"></td>
+                    <td th:text="${blood.mobileno}"></td>
+                    <td th:text="${blood.pincode}"></td>
+                    <td th:text="${blood.state}"></td>
+                    <td th:text="${blood.district}"></td>
+                    <td th:text="${blood.tehsil}"></td>
+                    <td th:text="${blood.bloodgroup}"></td>
+                    <td th:text="${blood.gender}"></td>
+                    <td th:text="${blood.joiningdate}"></td>
+                    <td th:text="${blood.email}"></td>
+                    <td>
+                        <a th:href="@{/blood/details/{id}(id=${blood.id})}">
+                            <button>VISIT</button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </th:block>
+
+    <th:block th:unless="${bloodGroupInfo != null and not #lists.isEmpty(bloodGroupInfo)}">
+        <h1>Records not found</h1>
+    </th:block>
+
+    <h2 th:text="${resultMsg}"></h2>
+
+</body>
+</html>
