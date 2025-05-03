@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Home</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+    <h1>Welcome to Our Bank</h1>
+    
+    <nav>
+        <a th:href="@{/account}">Create Account</a> |
+        <a th:href="@{/deposit}">Deposit</a> |
+        <a th:href="@{/withdraw}">Withdraw</a> |
+        <a th:href="@{/transfer}">Transfer</a>
+    </nav>
+
+</body>
+</html>

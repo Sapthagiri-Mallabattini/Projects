@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create Account</title>
+<link rel="stylesheet" th:href="@{/css/account.css}">
+</head>
+<body>
+
+	<h2>Create New Bank Account</h2>
+
+	<form method="post" th:action="@{/account}" onsubmit="return validateCreateAccountForm()">
+		<input type="text" name="accountHolder" placeholder="Account Holder Name" required><br> 
+		<input type="number" name="initialDeposit" placeholder="Initial Deposit" required min="0"><br>
+		<button type="submit">Create Account</button>
+		<button type="submit" th:onclick="|window.location.href='@{/}'|">Home</button>
+	</form>
+
+	<div th:if="${message}" style="color: green;">
+		<p th:text="${message}"></p>
+	</div>
+
+	<div th:if="${error}" style="color: red;">
+		<p th:text="${error}"></p>
+	</div>
+
+	<script th:src="@{/js/validation.js}"></script>
+
+</body>
+</html>

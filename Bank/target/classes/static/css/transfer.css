@@ -1,0 +1,81 @@
+@charset "UTF-8";
+body {
+    font-family: 'Arial', sans-serif;
+    background: #2c3e50;
+    color: #ecf0f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h2 {
+    color: #f39c12;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+form {
+    margin-top: 40px;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 2px solid #8e44ad;
+    background-color: #ecf0f1;
+    font-size: 1.2rem;
+}
+
+button {
+    padding: 12px 30px;
+    margin: 15px 10px;
+    background-color: #8e44ad;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #9b59b6;
+    transform: scale(1.05) translateY(-5px);
+}
+
+button:active {
+    background-color: #8e44ad;
+    transform: translateY(2px);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(146, 0, 255, 0.6);
+}
+
+div {
+    margin-top: 20px;
+}
+
+div p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+div p[th\:text="${message}"] {
+    color: green;
+}
+
+div p[th\:text="${error}"] {
+    color: red;
+}
